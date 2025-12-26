@@ -36,3 +36,20 @@ console.log(false + 2);
 //" " ==> true
 //"hello" ==> true  
 
+console.log(null>0); //false
+console.log(null==0); //false
+console.log(null>=0); //true
+console.log(undefined==0); //false
+console.log(undefined>0);   //false
+console.log(undefined<0);   //false 
+console.log("2" > 1); //true
+console.log("01" == 1); //true  
+console.log("03" === 3); //false
+// ------------------------------
+// === vs ==
+console.log(2 === "2"); //false
+console.log(2 == "2");  //true  
+console.log(null == undefined); //true
+console.log(null === undefined); //false 
+//===strict equality operator   
+// ------------------------------
