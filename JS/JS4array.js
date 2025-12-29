@@ -39,3 +39,4 @@ let numbers = [1, 2, 3, 4, 5];
 const n1=numbers.splice(1, 2); //removes 2 elements from index 1
 console.log(n1); //[2, 3]
 console.log(numbers); //[1, 4, 5]
+
