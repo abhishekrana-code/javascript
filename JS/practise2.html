@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM @ Mastering</title>
+</head>
+<body style="background-color: #212221; color : #fff">
+    <ul class="Language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(lang){
+        const li =document.createElement('li');
+        li.innerHTML=`${lang}`
+        document.querySelector('.Language').appendChild(li)
+    }
+    addLanguage("java")
+
+    function addOPtiLanguage(lang){
+        const li =document.createElement('li');
+        li.appendChild(document.createTextNode(lang))
+        document.querySelector('.Language').appendChild(li)
+    }
+    addOPtiLanguage('python')
+
+    //Edit
+    const secondLang=document.querySelector("li:nth-child(2)")
+    //secondLang.innerHTML="ruby"
+
+    const newLi=document.createElement('li')
+    newLi.textContent ="RUBY"
+    secondLang.replaceWith(newLi)
+    newLi.style.color='orange'
+
+    const first = document.querySelector("li:first-child")
+    first.outerHTML='<li>TypeScript</li>'
+
+    //remove
+    const last =document.querySelector("li:last-child")
+    last.remove()
+</script>
+</html>

@@ -24,3 +24,4 @@
 //     paragraph.style.color = "green";
 // });
 document.getElementById("myButton").innerHTML="CLICK ME NOW!";
+//document object mode
