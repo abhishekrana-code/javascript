@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Event</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id ="images">
+            <li><img width = "200px" id = "photoshop" src="https://th.bing.com/th?id=ORMS.252df082c3e589d1368a964e6bd095b3&pid=Wdp&w=312&h=196&qlt=100&c=1&rs=1" alt="photoshop"></li>
+            <li><img width = "200px" id = "meeting" src="https://th.bing.com/th?id=ORMS.ee9210a974cea2923519b1cfe12ac12f&pid=Wdp&w=312&h=172&qlt=90&c=1&rs=1&dpr=1&p=0" alt=""></li>
+            <li id="google"><a style="color: bisque;" href="https://Google.com">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('meeting').onclick=function(){
+    //     alert('cartoon clicked')
+    // }
+    // document.getElementById('meeting').addEventListener('click',function(){
+    //     alert("Meeting is happening")
+    // })
+    //events Propagation
+    //by default false(bubbling up approach)
+    //true (top to bottom)
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul")
+    //     // e.stopPropagation()
+    // },false)
+    // document.getElementById('meeting').addEventListener('click',function(e){
+    //     console.log("meeting clicked")
+    //     // e.stopPropagation()
+    // },false)
+
+    // //preventDefault
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log(" clicked")
+    //     // e.stopPropagation()
+    // })
+    // document.querySelector('#images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode);//<li>…</li>
+        //let removeIt=e.target.parentNode
+        //removeIt.remove();
+        //removeIt.parentNode.removeChild(removeIt);
+    //})
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove();
+        }
+    })
+
+</script>
+</html>

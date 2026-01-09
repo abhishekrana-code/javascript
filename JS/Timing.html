@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Timing</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+</body>
+<script>
+    // const sayAbhishek =function(){
+    //     console.log("Abhishek is Here");
+    // }
+    // const changeHeading=function(){
+    //     document.querySelector('h1').innerHTML='Master it'
+    // }
+    //setTimeout(sayAbhishek,5000)
+    //methods to stop event happening
+    // const changeMe = setTimeout(changeHeading,5000)
+    // clearTimeout(changeME)
+
+    // const changeMe = setTimeout(changeHeading,5000)
+    // document.querySelector('#stop').addEventListener('click',function(){
+    //     clearTimeout(changeMe)
+    //     console.log("Stopped")
+    //     setTimeout(sayAbhishek,500)
+    //  })
+
+    //setInterval
+    // setInterval(function(){
+    //     console.log("Abhishek",Date.now())
+    // },1000)
+
+    const sayDate =function(str){
+        console.log(str,Date.now())
+    }
+    //setInterval(sayDate,1000,"rana")
+    const intervalID= setInterval(sayDate,1000,"rana")
+
+    clearInterval(intervalID)
+</script>
+</html>

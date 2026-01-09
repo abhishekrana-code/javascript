@@ -1,0 +1,14 @@
+//JavaScript
+* synchronous
+* single Threaded
+
+/Execution Context
+--executed one lne of code at a time
+--Each operation waits for the last one to complete it Execution
+
+/Blocking Code VS Non Blocking Code
+BC-> block the flow of code
+     read file sync
+NBC-->Does not block Execution
+      read file async    
+      
