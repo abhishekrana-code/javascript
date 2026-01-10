@@ -15,10 +15,10 @@ let numGuess = 1
 let playGame = true
 
 if(playGame){
-    submit.addEventListener('click',function(e){
+    submit.addEventListener('click', function (e){
         e.preventDefault()
-        const guess=parseInt(userInput.value)
-        validateGuess(guess)
+        const guess=parseInt(userInput.value);
+        validateGuess(guess);
     })
 }
 
@@ -41,7 +41,8 @@ function validateGuess(guess){
             displayGuess(guess)
             displayMessage(`Game over! Random  number was ${randomNumber}`)
             endGame();
-        } else
+        } 
+        else
         {
             displayGuess(guess)
             checkGuess(guess)
@@ -52,8 +53,9 @@ function validateGuess(guess){
 
 function checkGuess(guess){
     if(guess === randomNumber){
-        alert("🎊🎊🎊🎊🎊")
+        alert("yOU WON🎊🎊🎊🎊🎊")
         displayMessage(`CONGRATS🎊! YOU WON😊....`)
+        endGame();
     } else if (guess<randomNumber){
         displayMessage(`YOU FAIL😑! Guess Higher Number`)
     }
@@ -63,10 +65,10 @@ function checkGuess(guess){
 
 }
 function displayGuess(guess){
-    userInput.value = ''
-    guessSlot.innerHTML += `${guess} `
+    userInput.value = '';
+    guessSlot.innerHTML += `${guess}, `
     numGuess++;
-    remaining.innerHTML = `${11-numGuess}`
+    remaining.innerHTML = `${11-numGuess} `;
 } 
 function displayMessage(message){
     lowOrHi.innerHTML = `<h2>${message}</h2>`
@@ -74,23 +76,27 @@ function displayMessage(message){
 function endGame(){
     userInput.value='';
     userInput.setAttribute('disabled', '')
-    p.classList.add('button')
+    p.classList.add('button');
     p.innerHTML=`<h2 id="newGame">Start New Game</h2>`;
     startOver.appendChild(p);
     playGame=false;
-    newGame();
 
 }
-function newGame(){
-    const newGameButton=document.querySelector('#newGame')
-    newGameButton.addEventListener("click", function(e){
-        randomNumber=parseInt(Math.random()*100+1)
-        prevGuess=[];
-        numGuess=1;
-        guessSlot.innerHTML=""
-        remaining.innerHTML`${11-numGuess}`;
-        userInput.removeAttribute('disabled');
-        startOver.removeChild(p)
-        playGame=true
-    })
+// Run this only once at the beginning
+document.addEventListener('click', (e) => {
+  if (e.target.id === 'newGame') {
+    startNewGame();
+  }
+});
+
+function startNewGame() {
+  randomNumber = parseInt(Math.random() * 100 + 1);
+  prevGuess = [];
+  numGuess = 1;
+  guessSlot.innerHTML = '';
+  lowOrHi.innerHTML='';
+  remaining.innerHTML = `${11 - numGuess} `;
+  userInput.removeAttribute('disabled');
+  startOver.removeChild(p);
+  playGame = true;
 }
